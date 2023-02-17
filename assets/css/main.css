@@ -1,0 +1,130 @@
+/* Core header, footer stuff */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {          
+  margin-bottom: 70px;
+  padding-top: 50px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #f5f5f5;
+}
+.footer .text-muted {
+  margin: 15px 0;
+}
+
+.page-header h1 img {
+	/* Line-up the header on the dashboad */
+	height: 50px;
+	vertical-align: middle;
+}
+
+.navbar.page-header {
+	/* Put some space between the nav bar title and the top of the page; we use Bootstrap's .page-header for consistency, but then pretty much override it */
+	padding-bottom: inherit; /* Use the padding from the standard .navbar class */
+	margin: 30px 0 30px;    	
+}
+
+/* Don't wrap tooltips, as per http://getbootstrap.com/javascript/#callout-tooltip-multiline */
+.tooltip-inner {
+    max-width: none;
+    white-space: pre; /* Is this preferable to no-wrap? */
+}
+
+/* Bootstrap rows/columns with no gutter, from http://curabites.com/development/2015/06/14/how-to-remove-gutter-space-between-columns-in-bootstrap-3/ */
+.row.no-gutter {
+	margin-left: 0;
+	margin-right: 0;
+}
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/* "Disable" links in the filtered list button dropdown, and on the dashboard buttons: */
+ul.dropdown-menu>li>a.disabled
+{
+	color: #aaa;
+	cursor: default;
+}
+ul.dropdown-menu>li>a.disabled:hover, ul.dropdown-menu>li>a.disabled:focus
+ {
+    color: #aaa;	    
+    background-color: #fff;
+}
+
+/* Allow us to use the Bootstrap colours anywhere; the default .text-[colour] classes don't exactly match the buttons */
+.true-text-success {
+	color: #5cb85c;
+}
+.true-text-info{
+	color: #5bc0de;
+}
+.true-text-warning {
+	color: #f0ad4e;
+}
+.true-text-danger {
+	color: #d9534f;
+}
+
+/* Some form styling */
+#ctrl-form ul.nav.nav-tabs {
+	border-bottom: none;
+}
+#ctrl-form form { /* Give the form a border, background colour, and some padding */
+	padding: 15px;
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+#ctrl-form .nav-tabs>li.active>a, #ctrl-form .nav-tabs>li.active>a:focus, #ctrl-form .nav-tabs>li.active>a:hover {
+	background-color: #f9f9f9; /* Give the tabs the same background colour as the form */
+}
+.cbx {
+	background-color: #fff; /* Give the custom checkboxes a white background */
+}
+
+/* Narrow alerts are handy sometimes */
+.alert.alert-narrow {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.alert.alert-narrow .close {
+	line-height: 0.9em;
+}
+
+/* Prevent the datatables spinner from disappearing behind the header input fields */
+#data-table_processing {
+	z-index: 10000;
+}
+
+/* Limit the size of the file-preview-image used by Krajee; is there a better way of doing this? Review http://plugins.krajee.com/file-input */
+.file-preview-image {
+	max-width: 100%;
+}
+
+/* New: preview pane, used only by Argos for now */
+#preview-pane > div { /* Note immediate child, to avoid hiding the alert within the error div */
+	display: none;
+	margin-top: 20px;
+}
+#preview-pane .preview,
+	#preview-pane .loading {
+	border: 1px solid #e7e7e7;
+	background-color: #fafafa;
+	border-radius: 4px;
+	padding: 10px 15px;	
+}
+#preview-pane .loading {
+	text-align: center;
+}
+
